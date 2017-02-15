@@ -4,7 +4,7 @@ This tool can be used to dynamically create a chart from Dynatrace timeseries da
 Using URL query parameters, many options can be changed.
 
 ##Requirements
-- Chart JS (link)
+- Chart JS http://www.chartjs.org/
 - Web Server
 - Dynatrace time series data: 
 ```javascript
