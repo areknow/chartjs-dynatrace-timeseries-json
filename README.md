@@ -53,7 +53,8 @@ You can pass a number to the `res` query in order to scale the X axis.
 - `4` will represent 2hr increments
 
 ##Colors
-Default colors include:
+A random color will be selected on initialization of chart.
+You can pass a color with the `color` query. Default colors include:
 - Blue
 - Green
 - Lime
