@@ -11,7 +11,6 @@ var chart = 'line';
 var legendShow = true;
 var legendPosition = 'bottom';
 var legendBoxWidth = 50;
-
 var color = 'rgba(75,192,192, 1)';
 var colorTransparent = 'rgba(75,192,192, 0.5)';
 var colors = {
@@ -36,9 +35,16 @@ var colorsTransparent = {
 
 
 
+
+
+
+
+
+
+
+
+
 $(function() {//doc ready
-  
-  
   //get the URL query strings
   getParams();
   
@@ -48,19 +54,16 @@ $(function() {//doc ready
   color = colors[randomColor];
   colorTransparent = colorsTransparent[randomColorTransparent];
   
-  
   //parse the JSON (right now this only supports 1 application)
   $.getJSON( "data/1app.json", function(data) {
     console.log(data)
-    
     //get times and points in arrays
     $.each(data.result.dataPoints,function(key,val) {
       appid = key;
       $.each(val,function(key2,val2) {
         if (key2 % res == 0) {
           if (val2[0] != null) {
-            var time = val2[0].toString().slice(0, -3);
-            times.push(convertTime(time));
+            times.push(convertTime(val2[0]));
           }
           if (val2[1] != null) {
             points.push(val2[1].round(2));
@@ -78,10 +81,13 @@ $(function() {//doc ready
     //pass init vals to build the chart
     buildChart(application,times,points);
   });
-  
-  
-  
 });//end doc ready
+
+
+
+
+
+
 
 
 
@@ -152,18 +158,7 @@ function buildChart(app,times,points) {
 
 
 
-//round those ridiculous decimals 
-Number.prototype.round = function(places) {
-  return +(Math.round(this + "e+" + places)  + "e-" + places);
-}
 
-//convert the time stamp to human time
-function convertTime(unixTimeStamp) {
-  var timestampInMilliSeconds = unixTimeStamp*1000;
-  var date = new Date(timestampInMilliSeconds);
-  var formattedDate = date.format('h:i');
-  return formattedDate;
-}
 
 //save url parameters to variables
 function getParams() {
@@ -249,6 +244,18 @@ function getParams() {
     legendBoxWidth = parseInt(size);
     
   }
+}
+
+//round those ridiculous decimals 
+Number.prototype.round = function(places) {
+  return +(Math.round(this + "e+" + places)  + "e-" + places);
+}
+
+//convert the time stamp to human time
+function convertTime(unixTimeStamp) {
+  var date = new Date(unixTimeStamp);
+  var formattedDate = date.format('h:i');
+  return formattedDate;
 }
 
 //convert hexadecimal color to RBA color with opacity
