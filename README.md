@@ -65,6 +65,9 @@ You can pass a color with the `color` query. Default colors include:
 - Gray
 
 You can also use the `hex` query to pass in a hexadecimal color code (long or short hand)
+Example:
+- `?hex=ff00ff`
+- `?hex=f0f`
 
 ##Issues
 Currently will not work if the timeseries JSON includes data from more than 1 application. Filter your JSON beforehand.
