@@ -215,12 +215,8 @@ function getParams() {
   //get animation boolean
   if ($.url().param('anim')) {
     animChoice = $.url().param('anim');
-    if (animChoice == 'false') {
-      anim = 0;
-    }
-    if (animChoice == 'true') {
-      anim = 500;
-    }
+    if (animChoice == 'false') anim = 0;
+    if (animChoice == 'true') anim = 500;
   }
   //get chart type
   if ($.url().param('type')) {
@@ -242,7 +238,6 @@ function getParams() {
   if ($.url().param('legendsize')) {
     size = $.url().param('legendsize');
     legendBoxWidth = parseInt(size);
-    
   }
 }
 
