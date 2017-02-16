@@ -1,6 +1,6 @@
 #ChartJS Dynatrace Timeseries JSON
 
-![alt text](http://arnaud.cr/dynatrace/davis/git1.png "Example screenshot")
+![alt text](http://arnaud.cr/dynatrace/davis/res/git1.png "Example screenshot")
 
 This tool can be used to dynamically create a chart from Dynatrace timeseries data.
 Using URL query parameters, many options can be changed.
