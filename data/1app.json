@@ -7,7 +7,7 @@
       "timeseriesId": "com.dynatrace.builtin:app.useractionsperminute",
       "unit": "count/min",
       "entities": {
-      "APPLICATION-157F59F44773DD97": "image gallery",
+      "APPLICATION-157F59F44773DD97": "Dynatrace EasyTravel",
       "APPLICATION-22D70A0636596C20": "ven01383.service-now.com - 26895550473435600",
       "APPLICATION-39867C12783D2D67": "www.easytravel.com - 19615880961984879",
       "APPLICATION-FDF1A182E95E9E3D": "www.openstack.easytravel.com",
