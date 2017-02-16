@@ -32,7 +32,7 @@ Example query string:
 `http://localhost/chart/?width=800&height=500&res=4&color=red&anim=true&hex=f21&legend=true`
 
 | Property | Parameter | Description | Default |
-| --- |:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|
 | Width | `width` | width of chart | `400` |
 | Height | `height` | height of chart | `500` |
 | Resolution | `res` | chart resolution | `2` (1hr) |
