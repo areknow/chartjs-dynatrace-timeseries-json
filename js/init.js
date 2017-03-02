@@ -63,7 +63,8 @@ $(function() {//doc ready
       $.each(val,function(key2,val2) {
         if (key2 % res == 0) {
           if (val2[0] != null) {
-            times.push(convertTime(val2[0]));
+//            times.push(convertTime(val2[0]));
+            times.push(val2[0]);
           }
           if (val2[1] != null) {
             points.push(val2[1].round(2));
@@ -129,6 +130,17 @@ function buildChart(app,times,points) {
     type: chart,
     data:data,
     options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          time: {
+            unitStepSize: 1,
+            displayFormats: {
+              'hour': 'h:mm'
+            }
+          }
+        }]
+      },
       responsive: true,
       maintainAspectRatio: false,
       animation: {
@@ -141,14 +153,20 @@ function buildChart(app,times,points) {
           boxWidth: legendBoxWidth,
           fontStyle: 'bold'
         }
+      },
+      tooltips: {
+        callbacks: {
+          title: function(tooltipItem, data) {
+            return data.datasets[0].label +' '+convertTime(tooltipItem[0].xLabel)
+          },
+          label: function(tooltipItem, data) {
+            return ' '+tooltipItem.yLabel
+          }
+        }
       }
     }
   });
 }
-
-
-
-
 
 
 
