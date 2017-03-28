@@ -5,7 +5,7 @@
 This tool can be used to dynamically create a chart from Dynatrace timeseries data.
 Using URL query parameters, many options can be changed.
 
-##Requirements
+## Requirements
 - Chart JS http://www.chartjs.org/
 - Web Server
 - Dynatrace time series data: 
@@ -29,7 +29,7 @@ Using URL query parameters, many options can be changed.
 }
 ```
 
-##Query String
+## Query String
 Example query string:
 `http://localhost/chart/?width=800&height=500&res=4&color=red&anim=true&hex=f21&legend=true`
 
@@ -47,14 +47,14 @@ Example query string:
 | Animation | `anim` | (true/false) to toggle animation | `false` |
 
 
-##Chart Resolutions
+## Chart Resolutions
 You can pass a number to the `res` query in order to scale the X axis.
 - `1` will represent 30 minute increments 
 - `2` will represent 1hr increments
 - `3` will represent 1.5hr increments
 - `4` will represent 2hr increments
 
-##Colors
+## Colors
 A random color will be selected on initialization of chart.
 You can pass a color with the `color` query. Default colors include:
 - Blue
@@ -68,5 +68,5 @@ You can also use the `hex` query to pass in a hexadecimal color code (long or sh
 - `?hex=ff00ff`
 - `?hex=f0f`
 
-##Issues
+## Issues
 Currently will not work if the timeseries JSON includes data from more than 1 application. Filter your JSON beforehand.
