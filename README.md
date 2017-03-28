@@ -1,4 +1,4 @@
-#ChartJS Dynatrace Timeseries JSON
+# ChartJS Dynatrace Timeseries JSON
 
 ![alt text](http://arnaud.cr/dynatrace/davis/res/git1.png "Example screenshot")
 
